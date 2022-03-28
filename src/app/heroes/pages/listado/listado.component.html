@@ -1,1 +1,23 @@
-<p>listado works!</p>
+
+<h1>Listado de Heroes</h1>
+<mat-divider></mat-divider>
+<br>
+
+<!-- These layouts are like bootstrap, so in the following lanees
+fxLayout.xs = means when its xs it convert into column -->
+<div fxLayout="row wrap"
+    fxLayout.xs="column"
+    fxLayoutAlign="center"
+    fxLayoutGap="20px"
+> <!-- Clase row de filas y wrap  hace que si no cabe salte a la siguiente linea-->
+    <div fxFlex="20" 
+        fxFlex.lg="15"
+        fxFlex.sm="30"
+    *ngFor="let heroe of listadoHeroes">
+   
+    <app-heroe-tarjeta [miHeroe]="heroe"></app-heroe-tarjeta>
+    </div>
+
+
+  
+</div>
