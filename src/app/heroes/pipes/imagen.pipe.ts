@@ -3,6 +3,9 @@ import { Heroe } from "../interfaces/heroes.interface";
 
 @Pipe({
     name:'imagen'
+    /*
+    pure:false hara que se refresca
+    */
 })
 
 export class ImagenPipe implements PipeTransform{
@@ -10,7 +13,7 @@ export class ImagenPipe implements PipeTransform{
     transform(heroe: Heroe) :string {
         //assets/heroes/{{heroe.id}}.jpg"
         //Si no tiene el un id, ejemplo en la creacion
-        debugger;
+        
         if(heroe.alt_img===''){
             return 'assets/no-image.png';
         }else if(!heroe.id && !heroe.alt_img ){         
